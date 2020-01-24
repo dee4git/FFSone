@@ -3,9 +3,12 @@ from django.contrib.auth.models import User, auth
 from django.contrib import messages
 from django.contrib.auth.decorators import login_required
 
+from stores.models import Store
+
 
 def home(request):
-    return render(request, 'home.html')
+    sts=Store.objects.all()
+    return render(request, 'home.html',{"sts":sts})
 
 #@login_required(login_url="/acc/login/")
 def makemoney(request):

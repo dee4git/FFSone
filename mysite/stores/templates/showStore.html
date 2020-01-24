@@ -6,7 +6,7 @@
     <meta name="description" content="">
     <meta name="author" content="Mark Otto, Jacob Thornton, and Bootstrap contributors">
     <meta name="generator" content="Jekyll v3.8.6">
-    <title>saadi's blogs</title>
+    <title>dj Made it </title>
 
     <link rel="canonical" href="https://getbootstrap.com/docs/4.4/examples/album/">
 
@@ -61,9 +61,12 @@
                    <h1 class="card-text"> {{i.name}}</h1>
               </a>
 
-              <p>Category : {{i.category}}</p>
+              <p> {{i.location}}</p>
            <img class="card-img-top" src= "{{ i.thumbnail.url }}" alt="No image found!" />
             <div class="card-body">
+              <p class="card-text">Category: {{i.category}}</p>
+            </div>
+              <div class="card-body">
               <p class="card-text"> {{i.description}}</p>
                 <br/>
             </div>
