@@ -1,0 +1,7 @@
+<h1>This is the create form</h1>
+<form class="site-from" action="/mm/st/add/"
+      method="POST"  enctype="multipart/form-data">
+    {%csrf_token%}
+    {{form.as_p}}
+    <input type="submit" value="Add Store"/>
+</form>
