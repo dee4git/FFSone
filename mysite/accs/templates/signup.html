@@ -1,0 +1,16 @@
+<link href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css" >
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <form class="site-from" method="POST" action="/acc/reg/">
+        {% csrf_token %}
+        {{form}}
+        <input type="submit" value="Signup ">
+    </form>
+</body>
+</html>

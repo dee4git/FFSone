@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>REGGG</title>
+</head>
+<body>
+    <form action="reg"  method="post">{% csrf_token %}
+        <input type="text" name = "first_name" placeholder="First Name : "><br>
+        <input type="text" name = "last_name" placeholder="Last Name : "><br>
+        <input type="text" name = "username" placeholder="User Name : "><br>
+        <input type="email" name = "email" placeholder="Email :"><br>
+        <input type="password" name = "password1" placeholder="password :"><br>
+        <input type="password" name = "password2" placeholder="Confirm password:  "><br>
+        <input type="submit">
+    </form>
+    <div>
+        <h1>Alrady Have an account?</h1>
+        <a href="login" >Log in </a>
+    </div>
+    <div>
+        {%for msg in messages %}
+        <h1>
+            {{  msg }}
+        </h1>
+        {%endfor%}
+    </div>
+</body>
+</html>
