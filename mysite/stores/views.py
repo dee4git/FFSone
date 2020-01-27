@@ -1,4 +1,4 @@
-from django.shortcuts import render, redirect
+from django.shortcuts import render, redirect, get_object_or_404
 from . import forms
 from .models import Store
 
@@ -15,6 +15,9 @@ def addStore(request):
         form = forms.StoreForm()
     return render(request, 'addStore.html', {"form": form})
 
+def detail(request,store_id):
+    detail_store = get_object_or_404(Store, pk=store_id)
+    return render(request, 'detail_store.html', {'detail_store': detail_store})
 
 def shwoStore(request):
     sts= Store.objects.all()

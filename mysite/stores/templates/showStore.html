@@ -55,12 +55,10 @@
          <div class="row">
 
           {% for i in sts%}
-        <div class="col-md-4">
-          <div class="card mb-4 shadow">
-              <a >
-                   <h1 class="card-text"> {{i.name}}</h1>
-              </a>
-
+        <div class="col-md-3">
+          <div class="card mb-3 shadow">
+              <a href="{% url 'detailed_store' i.id %}">
+                  <h1 class="card-text"> {{i.name}}</h1>
               <p> {{i.location}}</p>
            <img class="card-img-top" src= "{{ i.thumbnail.url }}" alt="No image found!" />
             <div class="card-body">
@@ -71,8 +69,10 @@
                 <br/>
             </div>
                <br/>
+              </a>
           </div>
         </div>
+
              <br/>
 
           {% endfor %}
