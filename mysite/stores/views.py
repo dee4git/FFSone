@@ -1,6 +1,7 @@
 from django.shortcuts import render, redirect, get_object_or_404
 from . import forms
 from .models import Store
+from plans.models import Plan
 
 # Create your views here.
 def addStore(request):
@@ -17,7 +18,9 @@ def addStore(request):
 
 def detail(request,store_id):
     detail_store = get_object_or_404(Store, pk=store_id)
-    return render(request, 'detail_store.html', {'detail_store': detail_store})
+    pls= Plan.objects.filter(store=store_id)
+    return render(request, 'detail_store.html', {'detail_store': detail_store,
+                                                 'pls':pls})
 
 def shwoStore(request):
     sts= Store.objects.all()

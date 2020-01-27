@@ -21,6 +21,7 @@ ALLOWED_HOSTS = []
 # Application definition
 
 INSTALLED_APPS = [
+    'plans',
     'mysite',
     'accounts',
     'accs',
@@ -52,6 +53,7 @@ TEMPLATES = [
             'templates',
             'accounts/templates',
             'stores/templates',
+            'plans/templates',
         ],
         'APP_DIRS': True,
         'OPTIONS': {
