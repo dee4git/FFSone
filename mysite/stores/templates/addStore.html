@@ -3,6 +3,13 @@
 <form class="site-from" action="/mm/st/add/"
       method="POST"  enctype="multipart/form-data">
     {%csrf_token%}
-    {{form.as_p}}
+   {{ form.non_field_errors }}
+  <div class="fieldWrapper">
+    {{ form.subject.errors }}
+    {{ form.subject.label_tag }}
+    {{ form.subject }}
+      {{form.as_p}}
+    <span class="helptext">{{ form.subject.help_text }}</span>
     <input type="submit" value="Add Store"/>
+  </div>
 </form>

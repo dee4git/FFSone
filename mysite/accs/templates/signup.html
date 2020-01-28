@@ -9,7 +9,7 @@
 <body>
     <form class="site-from" method="POST" action="/acc/reg/">
         {% csrf_token %}
-        {{form}}
+        {{form.as_p}}
         <input type="submit" value="Signup ">
     </form>
 </body>
