@@ -21,6 +21,6 @@ class Plan(models.Model):
                                    "Thursday : Rice + Chicken + Veg \n"
                                    "Friday :  Biriyani\n"
                                   )
-    foodphoto=models.ImageField(default='default.jpg', upload_to='plans', blank=True)
+    foodphoto=models.ImageField(default='default.gif', upload_to='plans', blank=True)
     price = models.FloatField(max_length=200, default=39.99)
     store = models.ForeignKey(Store, default=None, on_delete=models.CASCADE)
