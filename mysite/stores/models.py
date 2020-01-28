@@ -11,5 +11,5 @@ class Store(models.Model):
     description = models.TextField(max_length=200, default="Please something about your shop")
     location = models.CharField(max_length=200, choices=locatoins, default='Farmgate')
     category = models.CharField(max_length=200, choices=cats, default='HomeMade')
-    thumbnail = models.ImageField(default='default.png', upload_to='pics', blank=True)
+    thumbnail = models.ImageField(default='store.gif', upload_to='pics', blank=True)
     owner = models.ForeignKey(User, default=None, on_delete=models.CASCADE)
