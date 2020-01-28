@@ -65,7 +65,7 @@
               <p class="card-text">Price: {{i.price}}</p>
             </div>
                    <div class="card-body">
-              <a class="card-text" href="{% url 'detailed_store' i.id %}">Shop : {{i.store.name}}</a>
+              <a class="card-text" href="{% url 'detailed_store' i.store.id %}">Shop : {{i.store.name}}</a>
             </div>
               <div class="card-body">
               <p class="card-text"> {{i.mealDescription}}</p>

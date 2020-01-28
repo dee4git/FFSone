@@ -1,7 +1,11 @@
+from django.conf import settings
+from django.contrib import auth
 from django.db import models
+from django.http import request
 from stores.models import Store
 
 category = [('Regular', 'Regular'), ('Exclusive', 'Exclusive'), ('Premium', 'Premium'), ]
+
 
 
 # Create your models here.

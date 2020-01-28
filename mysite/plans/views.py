@@ -11,7 +11,6 @@ def addPxS(request):
         form = forms.PlanForm(request.POST, request.FILES)
         if form.is_valid():
             instance = form.save(commit=False)
-            instance.store = request.user#Ekhane ki hobe????
             instance.save()
             return redirect("/")
     else:

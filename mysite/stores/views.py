@@ -4,6 +4,9 @@ from .models import Store
 from plans.models import Plan
 
 # Create your views here.
+def urStore(request):
+        stores = Store.objects.filter(owner=request.user)
+        return render(request, 'urstore.html', {'stores': stores})
 def addStore(request):
     if request.method == "POST":
         form = forms.StoreForm(request.POST, request.FILES)

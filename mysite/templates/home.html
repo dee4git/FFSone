@@ -55,6 +55,13 @@
       <li class="nav-item">
         <a href="pl/showall" class="nav-link">All Plans</a>
       </li>
+
+            {% if user.is_authenticated %}
+            <li class="nav-item">
+        <a href="mm/st/ursote" class="nav-link">Your Stores</a>
+      </li>
+            {% endif %}
+
 <!--      <li class="nav-item">-->
 <!--        <a href="acc/reg/" class="nav-link">Sign UP</a>-->
 <!--      </li>-->
