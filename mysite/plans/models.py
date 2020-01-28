@@ -10,9 +10,9 @@ category = [('Regular', 'Regular'), ('Exclusive', 'Exclusive'), ('Premium', 'Pre
 
 # Create your models here.
 class Plan(models.Model):
-    name = models.CharField(max_length=200, default="Store")
+    name = models.CharField(max_length=200, default="Plan Name")
     category = models.CharField(max_length=200, choices=category, default='Regular')
-    mealDescription = models.TextField(max_length=2000, default=" "
+    mealDescription = models.TextField(max_length=2000, default=
                                     "Saturday : Rice + Egg + Veg \n"
                                     "Sunday :  Rice + Fish + Veg \n"
                                    "Monday :  Rice + Chicken + Veg \n"
@@ -21,6 +21,6 @@ class Plan(models.Model):
                                    "Thursday : Rice + Chicken + Veg \n"
                                    "Friday :  Biriyani\n"
                                   )
-    foodphoto=models.ImageField(default='default.png', upload_to='plans', blank=True)
+    foodphoto=models.ImageField(default='default.jpg', upload_to='plans', blank=True)
     price = models.FloatField(max_length=200, default=39.99)
     store = models.ForeignKey(Store, default=None, on_delete=models.CASCADE)
