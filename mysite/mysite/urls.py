@@ -10,6 +10,7 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('mm/',views.makemoney),
     path('contact/',views.contact),
+    path('send/',views.sendInfo),
     path('',views.home),
     #apps
     path('mm/ac/', include('accounts.urls')),
