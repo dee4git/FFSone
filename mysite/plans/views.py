@@ -21,5 +21,4 @@ def addPxS(request):
         form = forms.PlanForm()
 
 
-    return render(request, 'addplanxstore.html', {"form": form
-                                                  ,"sts":sts})
+    return render(request, 'addplanxstore.html', {"form": form,"sts":sts})
