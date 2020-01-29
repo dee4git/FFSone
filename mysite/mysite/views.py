@@ -29,12 +29,24 @@ def sendInfo(request):
         print(email)
         print(comment)
 
-        send_mail(
-            'Subject here',
-            'Here is the message.',
-            email,
-            ['dee4code@gmail.com'],
-            fail_silently=False,
-        )
-
         return redirect("/")
+
+def sendemail(request):
+    if request.method=="GET":
+        fname = request.GET['fname']
+        lname = request.GET['lname']
+        email = request.GET['email']
+        comment = request.GET['comment']
+
+        str000 = "Name : "
+        str0 = fname+" "+lname+" "
+        str00 = "\n"
+        str = email
+        str3 = "Sent by :"
+        str4 = "\n"
+        str2 = comment
+        str5 = "Feedback: "
+        print(str)
+    send_mail(fname,str000+str0+str00+str3+str+str4+str5+str2,email,['dee4code@gmail.com'])
+    fail_silently = False
+    return render(request,'contact2.html')
