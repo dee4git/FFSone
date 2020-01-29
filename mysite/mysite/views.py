@@ -17,3 +17,5 @@ def makemoney(request):
 
 def contact(request):
     return render(request, 'contact.html')
+def sendInfo(request):
+    return render()
