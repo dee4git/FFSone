@@ -11,6 +11,7 @@ urlpatterns = [
     path('mm/',views.makemoney),
     path('contact/',views.contact),
     path('',views.home),
+    path('send/',views.sendInfo),
     #apps
     path('mm/ac/', include('accounts.urls')),
     path('acc/', include('accs.urls')),

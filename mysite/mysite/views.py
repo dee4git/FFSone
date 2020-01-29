@@ -2,7 +2,6 @@ from django.shortcuts import render, redirect
 from django.contrib.auth.models import User, auth
 from django.contrib import messages
 from django.contrib.auth.decorators import login_required
-
 from stores.models import Store
 
 
@@ -18,4 +17,13 @@ def makemoney(request):
 def contact(request):
     return render(request, 'contact.html')
 def sendInfo(request):
-    return render()
+    if request.method=="GET":
+        fname = request.GET['fname']
+        lname = request.GET['lname']
+        email = request.GET['email']
+        comment = request.GET['comment']
+        print(fname)
+        print(lname)
+        print(email)
+        print(comment)
+        return redirect("/")
