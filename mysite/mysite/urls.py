@@ -10,7 +10,7 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('mm/',views.makemoney),
     path('contact/',views.contact),
-    path('send/',views.sendInfo),
+    #path('send/',views.sendInfo),
     path('',views.home),
     #apps
     path('mm/ac/', include('accounts.urls')),
@@ -18,6 +18,9 @@ urlpatterns = [
     path('mm/acc/', include('accs.urls')),
     path('mm/st/', include('stores.urls')),
     path('pl/', include('plans.urls')),
+    path('dl/', include('dguys.urls')),
+    #alim
+    path('send/',views.sendemail)
 
 ]
 urlpatterns = urlpatterns+ static(settings.STATIC_URL, document_root= settings.STATIC_ROOT)
