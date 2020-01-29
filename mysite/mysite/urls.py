@@ -18,7 +18,6 @@ urlpatterns = [
     path('mm/acc/', include('accs.urls')),
     path('mm/st/', include('stores.urls')),
     path('pl/', include('plans.urls')),
-    path('dl/', include('dguys.urls')),
 
 ]
 urlpatterns = urlpatterns+ static(settings.STATIC_URL, document_root= settings.STATIC_ROOT)
