@@ -17,7 +17,7 @@ def addStore(request):
             return redirect("/")
     else:
         form = forms.StoreForm()
-    return render(request, 'addStore.html', {"form": form})
+    return render(request, 'addcv.html', {"form": form})
 
 def detail(request,store_id):
     detail_store = get_object_or_404(Store, pk=store_id)
@@ -27,4 +27,4 @@ def detail(request,store_id):
 
 def shwoStore(request):
     sts= Store.objects.all()
-    return render(request, 'showStore.html', {"sts":sts})
+    return render(request, 'showdguys.html', {"sts":sts})

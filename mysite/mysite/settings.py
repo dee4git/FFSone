@@ -26,6 +26,7 @@ INSTALLED_APPS = [
     'accounts',
     'accs',
     'stores',
+    'dguys',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
@@ -54,6 +55,7 @@ TEMPLATES = [
             'accounts/templates',
             'stores/templates',
             'plans/templates',
+            'dguys/templates',
         ],
         'APP_DIRS': True,
         'OPTIONS': {
