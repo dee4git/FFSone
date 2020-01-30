@@ -57,7 +57,7 @@
           {% for i in plans%}
         <div class="col-md-3">
           <div class="card mb-3 shadow">
-              <a href="{% url 'detailed_store' i.id %}">
+              <a href="{% url 'detailed_plan' i.id %}">
                   <h1 class="card-text"> {{i.name}}</h1></a>
               <p> Category :    {{i.category}}</p>
            <img class="card-img-top" src= "{{ i.foodphoto.url }}" alt="No image found!" />
