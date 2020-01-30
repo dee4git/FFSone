@@ -1,0 +1,25 @@
+div{
+  display:inline-block;
+  margin:0.4em;  padding:1em;
+  cursor:pointer;
+  background:#FFFFFF;  color:#666;
+}
+#pulse:hover{
+  animation: pulse 0.5s ease-in infinite;
+}
+#push:hover{
+  animation: pulse 0.3s linear 1;
+}
+#pop:hover{
+  animation: pop 0.3s linear 1;
+}
+@keyframes pulse{
+  25%  {transform: scale(0.9);}
+  75%  {transform: scale(1.1);}
+}
+@keyframes push{
+  50%  {transform: scale(0.8);}
+}
+@keyframes pop{
+  50%  {transform: scale(1.2);}
+}
