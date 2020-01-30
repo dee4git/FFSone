@@ -48,55 +48,31 @@
 
 <main role="main">
     <div class="container" >
-        <img src="{{ detail_store.thumbnail.url }}" class="img-fluid" alt="Responsive image" height="200"width="200">
+        <img src="{{ plan.foodphoto.url }}" class="img-fluid" alt="Responsive image" height="200"width="200">
         <div class="jumbotron p-4 p-md-5 text-black rounded bg-light">
     <div class="col-md-6 px-0">
 
-      <h1 class="display-4 font-italic">{{detail_store.name}}</h1>
-      <p class="lead my-3">{{detail_store.location}}</p>
-      <p class="lead my-3">Category: {{detail_store.category}}</p>
-      <p class="lead my-3">Description: {{detail_store.description}}</p>
-      <p class="lead my-3">Owner: {{detail_store.owner}}</p>
+      <h2 class="display-8 font-italic"> {{plan.name}}</h2>
+      <p class="lead my-3">Category : {{plan.category}}</p>
+      <p class="lead my-3">Price  : {{plan.price}}</p>
+      <p class="lead my-3">Description :  <br> {{plan.mealDescription}}
+        <h3><a class="card-text" href="{% url 'detailed_store' plan.store.id %}">Store : {{plan.store.name}}</a></h3>
+
     </div>
   </div>
 
 
     </div>
 </main>
-<h1>Plans in this store</h1>
+<h1>Enrolment is in making</h1>
     <hr/>
 
-    <div class="row">
-        {% for i in pls%}
-        <div class="col-md-3">
-          <div class="card mb-3 shadow">
-              <a href="{% url 'detailed_plan' i.id %}">
-                  <h1 class="card-text"> xxx: {{i.name}}</h1></a>
-              <p> Category :    {{i.category}}</p>
-           <img class="card-img-top" src= "{{ i.foodphoto.url }}" alt="No image found!" />
-            <div class="card-body">
-              <p class="card-text">Price: {{i.price}}</p>
-            </div>
-                   <div class="card-body">
-              <a class="card-text" href="{% url 'detailed_store' i.store.id %}">Shop : {{i.store.name}}</a>
-            </div>
-              <div class="card-body">
-              <p class="card-text"> {{i.mealDescription}}</p>
-                <br/>
-            </div>
-               <br/>
 
-          </div>
-        </div>
-
-             <br/>
-          {% endfor %}
-    </div>
   </body>
 
 <footer class="text-muted">
   <div class="container text-center">
-     <p>©️ Durjoy {% now "Y" %}</p>
+     <p>©️ DA {% now "Y" %}</p>
   </div>
 </footer>
   <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>

@@ -1,4 +1,4 @@
-from django.shortcuts import render, redirect
+from django.shortcuts import render, redirect, get_object_or_404
 from .models import Plan
 from . import forms
 from stores.models import Store
@@ -22,3 +22,7 @@ def addPxS(request):
 
 
     return render(request, 'addplanxstore.html', {"form": form,"sts":sts})
+
+def detail(request,plan_id):
+    plan = get_object_or_404(Plan, pk=plan_id)
+    return render(request, 'detailedplan.html', {'plan': plan})
