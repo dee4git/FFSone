@@ -1,13 +1,11 @@
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
 <h1>Please Add Your Plans's Infos</h1>
-<h1>Your store ids :</h1>
-{%for i in sts%}
-    <p>{{i.name}}________id : {{i}}</p>
 
-{%endfor%}
-<form class="site-from" action="/pl/add/"
+
+<form class="site-from" action="{% url 'addplan' sid %}"
       method="POST"  enctype="multipart/form-data">
     {%csrf_token%}
     {{form.as_p}}
+
     <input type="submit" value="Add Plan"/>
 </form>

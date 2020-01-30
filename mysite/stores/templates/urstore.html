@@ -79,7 +79,7 @@
               <a class="card-text" >StoreObject({{i.id}})</a>
             </div>
               <div class="card-body">
-              <a class="card-text" href="{% url 'addplan' %}">Add Plan</a>
+              <a class="card-text" href="{% url 'addplan' i.id %}">Add Plan</a>
             </div>
               <div class="card-body">
               <p class="card-text"> {{i.mealDescription}}</p>

@@ -12,6 +12,5 @@ class PlanForm(forms.ModelForm):
             'mealDescription',
             'foodphoto',
             'price',
-            'store',
-
+            #'store',
         ]
