@@ -82,7 +82,15 @@
     </nav>
     <nav class="navbar navbar-expand-sm navbar-dark bg-dark ">
         <a href="dl/showall" class="navbar-brand">Find a delivery boy for you </a>
+        {% if user.dguy %}
+        <a  href="{% url 'detailed_guy'  user.dguy.id %}"class="navbar-brand">See You CV</a>
+        {% else %}
+        {% if user.is_authenticated %}
         <a href="dl/add" class="navbar-brand mr right" >Apply as a delivery boy  </a>
+        {% else %}
+        <a href="acc/login" class="navbar-brand mr right" >LOG IN to apply as a delivery guy </a>
+        {%endif%}
+        {%endif%}
     </nav>
 
 
