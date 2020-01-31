@@ -1,17 +1,41 @@
+{% load static %}
 <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
 
 <head >
 
     <link rel="stylesheet" type = "text/css"
-	 href="{%static 'home\contact.css'%}">
+	 href="{%static 'home\makemoneypage.css'%}">
 
     <body align = "center">
-        {% if user.is_authenticated %}
-        <h1>These are your stats </h1>
-        {%else%}
-        <a href="">These are your stats </a>
+        <h1>Hello {{user.username}} welcome to your DASHBOARD </h1>
+        <h1>YOUR CUSTOMERS </h1>
 
+<table class="table">
+  <thead class="thead-light">
+    <tr>
+      <th scope="col">#</th>
+      <th scope="col">Store </th>
+      <th scope="col">Plan</th>
+      <th scope="col">Users</th>
+      <th scope="col">Location</th>
+      <th scope="col">Contact</th>
+    </tr>
+  </thead>
+  <tbody>
+          {%for i in e%}
+
+    <tr>
+      <th scope="row">{{i.id}}</th>
+      <td>{{i.plan.store.name}}</td>
+      <td>{{i.plan.name}}</td>
+      <td>{{i.enroller}}</td>
+      <td>{{i.address}}</td>
+      <td>{{i.phone}}</td>
+    </tr>
+        {%endfor%}
+  </tbody>
+</table>
 
     </body>
 
