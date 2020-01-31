@@ -64,10 +64,17 @@
 
     </div>
 </main>
-<h1>Enrolment is in making</h1>
-    <hr/>
+<h1>Enrolment is in Testing</h1>
+    {%if user.eid.plan.id == plan.id%}
+    <h1><a>
+        Already Enrolled
+    </a></h1>
 
-
+    {%else%}
+    <h1><a  href="{% url 'enrl' plan.id %}">
+        Try to Enrol
+    </a></h1>
+    {%endif%}
   </body>
 
 <footer class="text-muted">

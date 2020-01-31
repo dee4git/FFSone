@@ -13,13 +13,13 @@ class Plan(models.Model):
     name = models.CharField(max_length=200, default="Plan Name")
     category = models.CharField(max_length=200, choices=category, default='Regular')
     mealDescription = models.TextField(max_length=2000, default=
-                                    "Saturday : Rice + Egg + Veg \n"
-                                    "Sunday :  Rice + Fish + Veg \n"
-                                   "Monday :  Rice + Chicken + Veg \n"
-                                   "Tuesday : Rice + Mutton + Veg \n"
-                                   "Wednesday :  Rice + Fish + Veg \n"
-                                   "Thursday : Rice + Chicken + Veg \n"
-                                   "Friday :  Biriyani\n"
+                                    "Saturday : Rice + Egg + Veg "+"\n"+
+                                    "Sunday :  Rice + Fish + Veg \n"+"\n"+
+                                   "Monday :  Rice + Chicken + Veg \n"+"\n"+
+                                   "Tuesday : Rice + Mutton + Veg \n"+"\n"+
+                                   "Wednesday :  Rice + Fish + Veg \n"+"\n"+
+                                   "Thursday : Rice + Chicken + Veg \n"+"\n"+
+                                   "Friday :  Biriyani\n"+"\n"
                                   )
     foodphoto=models.ImageField(default='default.gif', upload_to='plans', blank=True)
     price = models.FloatField(max_length=200, default=39.99)

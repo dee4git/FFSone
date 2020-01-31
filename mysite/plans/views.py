@@ -2,6 +2,7 @@ from django.shortcuts import render, redirect, get_object_or_404
 from .models import Plan
 from . import forms
 from stores.models import Store
+from enrolments.models import Enrolment
 # Create your views here.
 def showPxS(request):
     plans=Plan.objects.all()
@@ -31,4 +32,6 @@ def addPxS(request,store_id):
 
 def detail(request,plan_id):
     plan = get_object_or_404(Plan, pk=plan_id)
-    return render(request, 'detailedplan.html', {'plan': plan})
+    enrl=Enrolment.objects.filter(enroller=request.user)
+    return render(request, 'detailedplan.html', {'plan': plan,
+                                                     'eid': enrl})
