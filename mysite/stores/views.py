@@ -30,6 +30,7 @@ def shwoStore(request):
     return render(request, 'showStore.html', {"sts":sts})
 
 def dashboard(request):
+
     stores=Store.objects.filter(owner=request.user)
     print(stores)
     for i in stores:
@@ -39,5 +40,5 @@ def dashboard(request):
         for j in plans:
             enrols=Enrolment.objects.filter(plan_id=j.id)
             print(enrols)
-
             return render(request,'dahsboard.html',{"e":enrols})
+    return render(request,"home.html")
