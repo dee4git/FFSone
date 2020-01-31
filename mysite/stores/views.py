@@ -41,4 +41,4 @@ def dashboard(request):
             enrols=Enrolment.objects.filter(plan_id=j.id)
             print(enrols)
             return render(request,'dahsboard.html',{"e":enrols})
-    return render(request,"home.html")
+    return redirect("/")
