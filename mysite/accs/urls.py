@@ -6,5 +6,5 @@ app_name='accs'
 urlpatterns=[
     path('reg/',views.signupV , name="signup"),
     path('login/', views.loginV, name='login'),
-    path('logout/', views.logoutV, name='logout'),
+    path('logout/', views.logoutV , name='logout'),
 ]

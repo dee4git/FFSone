@@ -32,6 +32,5 @@ def addPxS(request,store_id):
 
 def detail(request,plan_id):
     plan = get_object_or_404(Plan, pk=plan_id)
-    enrl=Enrolment.objects.filter(enroller=request.user)
     return render(request, 'detailedplan.html', {'plan': plan,
-                                                     'eid': enrl})
+                                                     })
