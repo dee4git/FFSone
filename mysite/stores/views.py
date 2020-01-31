@@ -2,7 +2,7 @@ from django.shortcuts import render, redirect, get_object_or_404
 from . import forms
 from .models import Store
 from plans.models import Plan
-
+from enrolments.models import Enrolment
 # Create your views here.
 def urStore(request):
         stores = Store.objects.filter(owner=request.user)
@@ -28,3 +28,16 @@ def detail(request,store_id):
 def shwoStore(request):
     sts= Store.objects.all()
     return render(request, 'showStore.html', {"sts":sts})
+
+def dashboard(request):
+    stores=Store.objects.filter(owner=request.user)
+    print(stores)
+    for i in stores:
+        plans=Plan.objects.filter(store_id=i.id)
+        print(plans)
+
+        for j in plans:
+            enrols=Enrolment.objects.filter(plan_id=j.id)
+            print(enrols)
+
+            return render(request,'dahsboard.html',{"e":enrols})
