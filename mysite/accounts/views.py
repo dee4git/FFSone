@@ -2,6 +2,7 @@ from django.shortcuts import render, redirect
 from django.contrib.auth.models import User, auth
 from django.contrib import messages
 from stores.models import Store
+from enrolments.models import Enrolment
 # Create your views here.
 def reg(request):
     if request.method == 'POST':
@@ -54,7 +55,8 @@ def logout(request):
 
 def myprofile(request):
     sts = Store.objects.filter(owner=request.user)
-
+    els=Enrolment.objects.filter(enroller=request.user)
     return render(request, 'myprofile.html', {
         "sts":sts,
+        "els":els,
     })

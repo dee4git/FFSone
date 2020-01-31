@@ -19,6 +19,7 @@ urlpatterns = [
     path('mm/st/', include('stores.urls')),
     path('pl/', include('plans.urls')),
     path('dl/', include('dguys.urls')),
+    path('en/', include('enrolments.urls')),
     #alim
     path('send/',views.sendemail)
 
