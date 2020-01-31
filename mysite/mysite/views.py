@@ -46,7 +46,7 @@ def sendemail(request):
         str4 = "\n"
         str2 = comment
         str5 = "Feedback: "
-        print(str)
-    send_mail(fname,str000+str0+str00+str3+str+str4+str5+str2,email,['dee4code@gmail.com'])
+
+    send_mail(fname,str000+str0+str00+str3+str+str4+str5+str2,email,['dafnowbd@gmail.com'])
     fail_silently = False
     return render(request,'contact2.html')

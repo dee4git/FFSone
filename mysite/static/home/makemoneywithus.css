@@ -1,14 +1,14 @@
 div{
   display:inline-block;
-  margin:0.4em;  padding:1em;
+  margin:0.0001em;  padding:.0001em;
   cursor:pointer;
-  background:#FFFFFF;  color:#666;
+  background:#ffffff00;  color:#666;
 }
 #pulse:hover{
   animation: pulse 0.5s ease-in infinite;
 }
 #push:hover{
-  animation: pulse 0.3s linear 1;
+  animation: pulse 0.3s linear .5;
 }
 #pop:hover{
   animation: pop 0.3s linear 1;
@@ -21,5 +21,5 @@ div{
   50%  {transform: scale(0.8);}
 }
 @keyframes pop{
-  50%  {transform: scale(1.2);}
+ 35%  {transform: scale(0.2);}
 }
