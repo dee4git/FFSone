@@ -1,4 +1,4 @@
-from django.shortcuts import render, redirect, get_object_or_404
+from django.shortcuts import render, redirect, get_object_or_404, HttpResponse
 from . import forms
 from .models import Store
 from plans.models import Plan
@@ -30,7 +30,6 @@ def shwoStore(request):
     return render(request, 'showStore.html', {"sts":sts})
 
 def dashboard(request):
-
     stores=Store.objects.filter(owner=request.user)
     print(stores)
     for i in stores:
@@ -41,4 +40,4 @@ def dashboard(request):
             enrols=Enrolment.objects.filter(plan_id=j.id)
             print(enrols)
             return render(request,'dahsboard.html',{"e":enrols})
-    return redirect("/")
+    return redirect("/mm/")
