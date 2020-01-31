@@ -59,29 +59,17 @@
         <h3><a class="card-text" href="{% url 'detailed_store' plan.store.id %}">Store : {{plan.store.name}}</a></h3>
 
     </div>
-  </div>
+    {%if user.is_authenticated%}
 
-
-    </div>
+        <h1><a  href="{% url 'enrl' plan.id %}">
+        Enrol Now
+    </a></h1>
+            {%else%}
+            <h1><a  href="/acc/login/">
+            Log in to Enrol
+    </a></h1>
+            {%endif%}
 </main>
-<h1>Enrolment is in Testing</h1>
-    {%if user.eid.plan.id == plan.id%}
-    <h1><a>
-        Already Enrolled
-    </a></h1>
-
-    {%else%}
-    <h1><a  href="{% url 'enrl' plan.id %}">
-        Try to Enrol
-    </a></h1>
-    {%endif%}
-  </body>
-
-<footer class="text-muted">
-  <div class="container text-center">
-     <p>©️ DA {% now "Y" %}</p>
-  </div>
-</footer>
   <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
 <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
