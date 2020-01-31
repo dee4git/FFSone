@@ -23,3 +23,14 @@ div{
 @keyframes pop{
  35%  {transform: scale(0.2);}
 }
+.site-form{
+margin-top: 60px;
+border: 1px solid #00solid
+padding: 20px
+}
+
+.site-form input, site-form textarea{
+    display: block;
+    margin: 20px 0 0 0;
+    padding: 10px;
+}
