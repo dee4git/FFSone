@@ -530,3 +530,14 @@ form .related-widget-wrapper ul {
 .clearable-file-input input {
     margin-top: 0;
 }
+.site-form{
+margin-top: 60px;
+border: 1px solid #00solid
+padding: 20px
+}
+
+.site-form input, site-form textarea{
+    display: block;
+    margin: 20px 0 0 0;
+    padding: 10px;
+}
