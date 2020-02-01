@@ -51,14 +51,20 @@
         <img src="{% static '1.png' %}" class="img-fluid" alt="Responsive image" height="200"width="2000">
         <div class="jumbotron p-4 p-md-5 text-black rounded bg-light">
     <div class="col-md-6 px-0">
-  <form class="site-from" method="POST" action="/acc/login/">
+    <form class="site-from" action="{% url 'enl' enl_id  %}"
+      method="POST"  enctype="multipart/form-data">
      {%csrf_token%}
-      <p class="lead my-3">{{form.as_p}}
+      <h2 class="display-8 font-italic">Total Price: {{price}} <Tk></Tk></h2>
+      <p class="lead my-3">{{form.as_p}}</p>
 
-     <input type="submit" value="LOG IN ">
-        <h3>New to Freelance Food Service?</h3>
-         <h1><a  href="/acc/reg/">
-            Signup </p>
+      <p class="lead my-3">
+         <input type="submit" value="Verify Payment"/>
+    <h3>Step 1  : Open Bkash app </h3>
+    <h3>Step 2  : Select payment </h3>
+    <h3>Step 3  : Use number(bkash agent) 01984566281 </h3>
+    <h2>Step 4  : Enter amount {{price}}  </h2>
+    <h3>Step 5  : Confirm payment with passcode </h3>
+    <h3>Step 6  : Enter the transaction id in Refid </h3></p>
     </form>
 </main>
   <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>

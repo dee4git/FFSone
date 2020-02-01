@@ -1,18 +1,43 @@
-<!DOCTYPE html>
-{% load static %}
 
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Title</title>
+{%load static%}
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+
+<head >
+
+    <link rel="stylesheet" type = "text/css"
+	 href="{%static 'home\makemoneywithus.css'%}">
+
+    <body align = "center">
+
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+      <center> <div id="push">
+        <h3 align="center">
+            <a href=" {% url 'home' %}" class="nav-link">
+            Your dashboard will only be available when someone enrolls in your plans
+            </a></h3></div></center>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+
+    </body>
+
 </head>
-<body>
-
-    <a href="acc/login" class="nav-link">LOG IN</a>
-    <a href="acc/reg" class="nav-link">REg</a>
-    <a href="acc/logout" class="nav-link">LOG IN</a>
-    <img alt="img01 being slided"src="{% static 'home/img/1.png' %}">
-    <img alt="img0 being slided"src="{% static '0.png' %}">
-
-</body>
-</html>

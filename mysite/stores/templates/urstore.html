@@ -53,8 +53,7 @@
       <h1 class="display-4 font-italic">Hello {{user.username}},</h1>
       <p class="lead my-3">These are your stores.</p>
       <p class="lead my-3">You can add plans to them.</p>
-      <p class="lead my-3">But please select your store as object while adding plan ,
-        I am not too good at programing , beggar perdon !!! :( </p>
+
     </div>
   </div>
 
@@ -75,9 +74,7 @@
             <div class="card-body">
               <p class="card-text">Description : {{i.description}}</p>
             </div>
-                   <div class="card-body">
-              <a class="card-text" >StoreObject({{i.id}})</a>
-            </div>
+
               <div class="card-body">
               <a class="card-text" href="{% url 'addplan' i.id %}">Add Plan</a>
             </div>
