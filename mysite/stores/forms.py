@@ -8,6 +8,7 @@ class StoreForm(forms.ModelForm):
         model = Store
         fields = [
             'name',
+            'phone',
             'description',
             'location',
             'category',

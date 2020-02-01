@@ -8,6 +8,7 @@ cats = [('HomeMade', 'HomeMade'), ('Professional', 'Professional')]
 # Create your models here.
 class Store(models.Model):
     name = models.CharField(max_length=200, default="Store")
+    phone = models.CharField(max_length=200, default="01719588000")
     description = models.TextField(max_length=200, default="Please something about your shop")
     location = models.CharField(max_length=200, choices=locatoins, default='Farmgate')
     category = models.CharField(max_length=200, choices=cats, default='HomeMade')
