@@ -20,6 +20,7 @@ urlpatterns = [
     path('pl/', include('plans.urls')),
     path('dl/', include('dguys.urls')),
     path('en/', include('enrolments.urls')),
+    path('pay/', include('payments.urls')),
     #alim
     path('send/',views.sendemail)
 
