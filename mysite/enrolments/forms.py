@@ -1,6 +1,6 @@
 from django import forms
 
-from .models import Enrolment
+from .models import Enrolment , Rating
 
 
 class EnrolmentForm(forms.ModelForm):
@@ -10,5 +10,14 @@ class EnrolmentForm(forms.ModelForm):
             'phone',
             'address',
             'duration',
+                    ]
+
+
+class RateForm(forms.ModelForm):
+    class Meta:
+        model = Rating
+        fields = [
+            'rating',
+            'comment',
 
                     ]

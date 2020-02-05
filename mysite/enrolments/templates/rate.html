@@ -48,34 +48,20 @@
 
 <main role="main">
     <div class="container" >
-        <img src="{{ plan.foodphoto.url }}" class="img-fluid" alt="Responsive image" height="200"width="200">
+        <img src="{{ p.foodphoto.url }}" class="img-fluid" alt="Responsive image" height="200"width="200">
         <div class="jumbotron p-4 p-md-5 text-black rounded bg-light">
     <div class="col-md-6 px-0">
-      <h2 class="display-8 font-italic"> {{plan.name}}  </h2>
-      <h2 class="display-8 "> Rating:  ({{rating}}⭐) 👤 [{{t}}]</h2>
-      <p class="lead my-3">Category : {{plan.category}}</p>
-      <p class="lead my-3">Price  : {{plan.price}}</p>
-      <p class="lead my-3">Description :  <br> {{plan.mealDescription}}
-        <h3><a class="card-text" href="{% url 'detailed_store' plan.store.id %}">Store : {{plan.store.name}}</a></h3>
 
+      <h2 class="display-8 font-italic">Rate  {{p.name}} </h2>
+      <form method="POST"  action="{% url 'rate' p.id %}">
+          {% csrf_token %}
+          {{form.as_p}}
+          <input type="submit" value="Save your rating">
+      </form>
+      </p>
     </div>
-    {%if user.is_authenticated%}
-
-        <h1><a  href="{% url 'enrl' plan.id %}">
-        Enrol Now
-    </a></h1>
-            {%else%}
-            <h1><a  href="/acc/login/">
-            Log in to Enrol
-    </a></h1>
-            {%endif%}
-            {{x}}
-
-            <h3>Comments from verified enrolments : </h3>
-            {% for j in rs.all %}
-            {{j.enroller}} <a>:</a>
-            {{j.comment}} [Rated {{j.rating}}⭐]<br>
-            {% endfor %}
+        </div>
+    </div>
 
 </main>
   <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>

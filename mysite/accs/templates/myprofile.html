@@ -114,7 +114,7 @@
     <tr>
       <th scope="col">#</th>
       <th scope="col">Store </th>
-      <th scope="col">Plan</th>
+      <th scope="col">Plan  </th>
       <th scope="col">Owner</th>
       <th scope="col">Location</th>
       <th scope="col">Contact</th>
@@ -128,7 +128,7 @@
     <tr>
       <th scope="row">{{i.id}}</th>
       <td>{{i.plan.store.name}}</td>
-      <td>{{i.plan.name}}</td>
+      <td>{{i.plan.name}} <a href="{% url 'rate' i.plan.id %}">  &nbsp;&nbsp;&nbsp;Rate it!</a> </td>
       <td>{{i.plan.store.owner}}</td>
       <td>{{i.address}}</td>
       <td>{{i.plan.store.phone}}</td>

@@ -12,6 +12,7 @@ urlpatterns = [
     path('contact/',views.contact),
     #path('send/',views.sendInfo),
     path('',views.home,name='home'),
+    path('search/',views.search,name='search'),
     #apps
     path('mm/ac/', include('accounts.urls')),
     path('acc/', include('accs.urls')),

@@ -2,7 +2,8 @@ from django.shortcuts import render, redirect, get_object_or_404
 from .models import Plan
 from . import forms
 from stores.models import Store
-from enrolments.models import Enrolment
+from enrolments.models import Enrolment, Rating
+from statistics import  mean
 # Create your views here.
 def showPxS(request):
     plans=Plan.objects.all()
@@ -29,8 +30,25 @@ def addPxS(request,store_id):
     return render(request, 'addplanxstore.html', {"form": form,
                                                   "sts":sts,
                                                   "sid":store_id})
+def Average(lst):
+    return mean(lst)
 
 def detail(request,plan_id):
+    rs = Rating.objects.filter(plan=int(plan_id))
+    nl = []
+
+    rating = 0
+
+    t = 0
+    for i in rs:
+        # ovreall
+        t += 1
+        nl.append(i.rating)
+        rating = round(Average(nl), 2)
     plan = get_object_or_404(Plan, pk=plan_id)
     return render(request, 'detailedplan.html', {'plan': plan,
+                                                 't': t,
+                                                 'rs': rs,
+                                                 'plan': plan,
+                                                 'rating':rating
                                                      })
