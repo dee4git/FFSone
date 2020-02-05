@@ -17,7 +17,7 @@ def addEnrl(request, plan_id):
             instance.save()
             print("passed")
             global price
-            price=float(instance.duration)*instance.plan.price
+            price=round((float(instance.duration)*instance.plan.price),2)
             print("printing rp")
             rp()
             return views.pay(request,instance.id)

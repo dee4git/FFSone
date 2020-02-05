@@ -54,7 +54,7 @@
     <form class="site-from" action="{% url 'enl' enl_id  %}"
       method="POST"  enctype="multipart/form-data">
      {%csrf_token%}
-      <h2 class="display-8 font-italic">Total Price: {{price}} <Tk></Tk></h2>
+      <h2 class="display-8 font-italic">Total Price: {{price}} BDT <Tk></Tk></h2>
       <p class="lead my-3">{{form.as_p}}</p>
 
       <p class="lead my-3">
