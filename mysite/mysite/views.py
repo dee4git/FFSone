@@ -1,14 +1,39 @@
 from django.core.mail import send_mail
+from django.db.models import Q
 
 from django.shortcuts import render, redirect
 from django.contrib.auth.models import User, auth
 from django.contrib import messages
 from django.contrib.auth.decorators import login_required
 from stores.models import Store
+from plans.models import Plan
 
 
 def search(request):
-    return render(request, 'search.html')
+    if request.method == 'GET':  # If the form is submitted
+        kw = request.GET.get('search_box', None)
+        str="no results found"
+        if kw:
+            plans = Plan.objects.filter(Q(name__contains=kw)|
+                                        Q(category__contains=kw)|
+                                        Q(mealDescription__contains=kw)
+                                        )
+            stores = Store.objects.filter(Q(name__contains=kw) |
+                                        Q(category__contains=kw) |
+                                        Q(description__contains=kw) |
+                                        Q(phone__contains=kw) |
+                                        Q(location__contains=kw)
+                                        )
+            if plans or stores:
+                return render(request, 'search.html',{
+                    "kw": kw,
+                    "plans": plans,
+                    "sts": stores,
+                                           } )
+        print(plans)
+        print(stores)
+    return render(request, 'search.html', {"kw": kw, "str": str
+                                           })
 
 
 def home(request):

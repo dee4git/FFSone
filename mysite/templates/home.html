@@ -74,10 +74,12 @@
 <!--      </li>-->
           <!-- Search form -->
         <form class="form-inline md-form form-sm active-cyan-2 mt-2"
-                action="{% url 'search' %}">
-            <input class="form-control form-control-sm mr-3 w-75" type="text" placeholder="Search"
+                action="{% url 'search' %}" method="GET">
+            <input class="form-control form-control-sm mr-3 w-75"
+                   name="search_box"
+                   type="text" placeholder="Search"
                 aria-label="Search">
-             <i class="fas fa-search" aria-hidden="true"></i>
+             <i class="fas fa-search" aria-hidden="ture"></i>
         </form>
         </ul>
       </div>
