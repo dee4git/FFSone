@@ -28,7 +28,12 @@ def detail(request,store_id):
 def shwoStore(request):
     sts= Store.objects.all()
     return render(request, 'showStore.html', {"sts":sts})
-
+def shwoStorehm(request):
+    sts= Store.objects.filter(category='HomeMade')
+    return render(request, 'showStore.html', {"sts":sts})
+def shwoStorepr(request):
+    sts= Store.objects.filter(category='Professional')
+    return render(request, 'showStore.html', {"sts":sts})
 def dashboard(request):
     stores=Store.objects.filter(owner=request.user)
     print(stores)

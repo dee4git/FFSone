@@ -50,7 +50,16 @@
     <div class="container" >
 <h1 class="text-center pt-3">Welcome to Freelance Food Service </h1>
 <br/>
-    <h2>All STORES</h2>
+<div class="dropdown">    <h2>All STORES</h2>
+
+  <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+SORT BY  </button>
+  <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+    <a class="dropdown-item" href="{% url 'allsotre' %}">ALL</a>
+    <a class="dropdown-item" href="{% url 'allsotrehm' %}">HOME MADE</a>
+    <a class="dropdown-item" href="{% url 'allsotrepr' %}">PROFESSIONAL</a>
+  </div>
+</div>
         <hr/>
          <div class="row">
 
