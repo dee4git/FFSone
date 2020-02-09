@@ -13,7 +13,10 @@ def search(request):
     if request.method == 'GET':  # If the form is submitted
         kw = request.GET.get('search_box', None)
         str="no results found"
-        if kw:
+        plans=[]
+        stores=[]
+        if kw :
+
             plans = Plan.objects.filter(Q(name__contains=kw)|
                                         Q(category__contains=kw)|
                                         Q(mealDescription__contains=kw)
