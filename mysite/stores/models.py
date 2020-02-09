@@ -1,7 +1,7 @@
 from django.contrib.auth.models import User
 from django.db import models
 
-locatoins = [('Farmgate', 'Farmgate'), ('Dhanmondi', 'Dhanmondi'), ('Wari', 'Wari'), ]
+locatoins = [('Farmgate', 'Farmgate'), ('Dhanmondi', 'Dhanmondi'), ('Moghbazar', 'Moghbazar'),('Badda', 'Badda'),('Uttara', 'Uttara'),('Azampur', 'Azampur'),('Khilkhet', 'Khilkhet'),('Banani', 'Banani'),('Nilkhet', 'Nilkhet'),('Bashabo', 'Bashabo'),('Rampura', 'Rampura'),('Mouchak', 'Mouchak'),('Mugdha', 'Mugdha'),('Wari', 'Wari'),('Shahabagh', 'Shahabagh') ]
 cats = [('HomeMade', 'HomeMade'), ('Professional', 'Professional')]
 
 
