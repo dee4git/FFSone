@@ -12,7 +12,11 @@ from plans.models import Plan
 def search(request):
     if request.method == 'GET':  # If the form is submitted
         kw = request.GET.get('search_box', None)
-        str="no results found"
+        str="no results found\n"
+        s1=   "Search suggestions:\n"
+        s2=    "-Your location [eg: Farmgate]\n"
+        s3=    "-Food item [eg: Rice, Chicken]\n"
+        s4=    "-Category [eg: Premium]\n"
         plans=[]
         stores=[]
         if kw :
@@ -35,7 +39,11 @@ def search(request):
                                            } )
         print(plans)
         print(stores)
-    return render(request, 'search.html', {"kw": kw, "str": str
+    return render(request, 'search.html', {"kw": kw, "str": str,
+                                           "s1":s1,
+                                           "s2":s2,
+                                           "s3":s3,
+                                           "s4":s4,
                                            })
 
 
