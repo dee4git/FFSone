@@ -51,6 +51,31 @@
 <h1 class="text-center pt-3">Welcome to Freelance Food Service </h1>
 <br/>
     <h2>All Plans</h2>
+        <!-- Example split danger button -->
+<div class="btn-group">
+  <button type="button" class="btn btn-danger">Sort by Price </button>
+  <button type="button" class="btn btn-danger dropdown-toggle dropdown-toggle-split" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+    <span class="sr-only">Toggle Dropdown</span>
+
+  </button>
+
+  <div class="dropdown-menu">
+    <a class="dropdown-item" href="{% url 'phtl' %}">Price High to Low</a>
+    <a class="dropdown-item" href="{% url 'phtl2' %}">Price Low to High</a>
+    <div class="dropdown-divider"></div>
+  </div>
+
+        <div class="dropdown">
+  <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+Sort by Category  </button>
+  <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+      <a class="dropdown-item" href="{% url 'all' %}">ALL</a>
+
+    <a class="dropdown-item" href="{% url 'r1' %}">Regular</a>
+    <a class="dropdown-item" href="{% url 'r2' %}">Exclusive</a>
+    <a class="dropdown-item" href="{% url 'r3' %}">Premium</a>
+  </div>
+</div></div>
         <hr/>
          <div class="row">
 

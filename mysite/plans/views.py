@@ -5,6 +5,26 @@ from stores.models import Store
 from enrolments.models import Enrolment, Rating
 from statistics import  mean
 # Create your views here.
+
+def regular(request):
+    plans = Plan.objects.filter(category='Regular')
+    return render(request, 'showplanxstore.html', {"plans": plans})
+def regular1(request):
+    plans = Plan.objects.filter(category='Exclusive')
+    return render(request, 'showplanxstore.html', {"plans": plans})
+def regular2(request):
+    plans = Plan.objects.filter(category='Premium')
+    return render(request, 'showplanxstore.html', {"plans": plans})
+
+def showphtl(request):
+    plans = Plan.objects.order_by('-price')
+    return render(request, 'showplanxstore.html', {"plans": plans})
+
+
+def showphtl2(request):
+    plans = Plan.objects.order_by('price')
+    return render(request, 'showplanxstore.html', {"plans": plans})
+
 def showPxS(request):
     plans=Plan.objects.all()
     return render(request,'showplanxstore.html',{"plans":plans})
