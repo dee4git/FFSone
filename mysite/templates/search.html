@@ -11,8 +11,9 @@
 <body>
 <h1>Showing search results for: {{kw}}</h1>
 <h1><br>{{str}}</h1>
+{%if plans %}
     <h2>Search results for plans: </h2>
-
+{%endif%}
 <div class="row">
           {% for i in plans%}
         <div class="col-md-3">
@@ -42,8 +43,9 @@
       </div>
 
     </div>
+{%if sts %}
     <h2>Search results for stores: </h2>
-
+{%endif%}
 <!--store-->       <div class="row">
 
           {% for i in sts%}
