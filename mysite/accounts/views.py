@@ -26,7 +26,7 @@ def reg(request):
                 print("user created sir")
                 return redirect('login')
         else:
-            messages.info(request, 'pass not mathcing')
+            messages.info(request, 'pass not matching')
             return redirect('reg')
 
     return render(request, 'reg.html')

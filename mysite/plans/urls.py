@@ -9,8 +9,9 @@ urlpatterns = [
     path('showallphtl21/',views.regular, name='r1'),
     path('showallphtl211/',views.regular1, name='r2'),
     path('showallphtl2111/',views.regular2, name='r3'),
-    path('s/<int:plan_id>/', views.detail, name='detailed_plan')
-    #added s/ just to diffrentiate b2in addplan and detailed_plan
+    path('s/<int:plan_id>/', views.detail, name='detailed_plan'),
+    path('up/<int:x>', views.update, name="upp"),
+    path('del/<int:tab_id>', views.delete, name="delp"),
 
 ]
 

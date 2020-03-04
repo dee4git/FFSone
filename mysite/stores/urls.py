@@ -8,7 +8,9 @@ urlpatterns = [
     path('showallstorepr/',views.shwoStorepr,name='allsotrepr'),
     path('ursote/',views.urStore),
     path('db/',views.dashboard,name='dashboard'),
-    path('<int:store_id>/', views.detail, name='detailed_store')
+    path('<int:store_id>/', views.detail, name='detailed_store'),
+    path('up/<int:x>', views.update, name="up"),
+    path('del/<int:tab_id>', views.delete, name="del"),
 
 ]
 
